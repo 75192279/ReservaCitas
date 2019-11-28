@@ -1,0 +1,19 @@
+﻿body {
+    
+}
+form {
+    width: 300px;
+    margin: 0;
+    background: #C5D3EE;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    position: absolute;
+    top: 420px;
+    text-align: center;
+}
+
+input {
+    width: 400px;
+    margin-top:5px;
+}

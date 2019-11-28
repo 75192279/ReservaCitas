@@ -1,14 +1,31 @@
-﻿using System;
+﻿using ClinicaRamos.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace ClinicaRamos.Controllers
 {
     public class PacienteController : Controller
     {
         // GET: Paciente
+
+        public ActionResult Paciente()
+        {
+
+            Paciente objeto03 = new Paciente();
+            objeto03.DNI = Request.Form["DNI"].ToString();
+            objeto03.Nombres = Request.Form["nombres"].ToString();
+            objeto03.ApellidoPaterno = Request.Form["apellidopaterno"].ToString();
+            objeto03.ApellidoMaterno = Request.Form["apellidopaterno"].ToString();
+            objeto03.Correo = Request.Form["correo"].ToString();
+            objeto03.Direccion = Request.Form["direccion"].ToString();
+            objeto03.FechaNacimiento = Convert.ToDateTime(Request.Form["fechanacimiento"]);
+            return View(objeto03);
+
+        }
         public ActionResult Index()
         {
             return View();
@@ -37,5 +54,7 @@ namespace ClinicaRamos.Controllers
 
             return Json(Listado, JsonRequestBehavior.AllowGet);
         }
+  
+        }
     }
-}
+
