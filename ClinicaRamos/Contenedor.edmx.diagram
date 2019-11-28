@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d429d45095d3449f9e00eb209f1d30d2" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblCita" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblCitaDetalle" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblEspecialidad" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblEstado" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblHorario" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblMedico" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblPaciente" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaRamosModel.tblUsuarios" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblCita__IdMedic__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblCita__IdPacie__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblCita__IdUsuar__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblCitaDe__IdCit__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblMedico__IdEsp__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblUsuari__IdEsp__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblMedico__IdEst__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaRamosModel.FK__tblMedico__IdHor__1920BF5C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

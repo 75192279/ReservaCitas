@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClinicaRamosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblCita">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+    <Property Name="observacion" Type="text" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPaciente" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdMedico" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCitaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="observacion" Type="text" Nullable="false" />
+    <Property Name="IdCita" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblEspecialidad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tblEstado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblHorario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dias" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HoraIngreso" Type="time" Precision="7" Nullable="false" />
+    <Property Name="HoraSalida" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblMedico">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DNI" Type="varchar" MaxLength="11" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="ApellidoPaterno" Type="varchar" MaxLength="50" />
+    <Property Name="ApellidoMaterno" Type="varchar" MaxLength="50" />
+    <Property Name="telefono" Type="varchar" MaxLength="11" />
+    <Property Name="IdEspecialidad" Type="int" Nullable="false" />
+    <Property Name="IdHorario" Type="int" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPaciente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DNI" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="70" />
+    <Property Name="ApellidoPaterno" Type="varchar" MaxLength="50" />
+    <Property Name="ApellidoMaterno" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Genero" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tblUsuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apelllidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DNI" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Genero" Type="char" MaxLength="1" />
+    <Property Name="IdEspecialidad" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tblCita__IdMedic__21B6055D">
+    <End Role="tblMedico" Type="Self.tblMedico" Multiplicity="1" />
+    <End Role="tblCita" Type="Self.tblCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedico">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCita">
+        <PropertyRef Name="IdMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCita__IdPacie__1FCDBCEB">
+    <End Role="tblPaciente" Type="Self.tblPaciente" Multiplicity="1" />
+    <End Role="tblCita" Type="Self.tblCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPaciente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCita">
+        <PropertyRef Name="IdPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCita__IdUsuar__20C1E124">
+    <End Role="tblUsuarios" Type="Self.tblUsuarios" Multiplicity="1" />
+    <End Role="tblCita" Type="Self.tblCita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCita">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCitaDe__IdCit__24927208">
+    <End Role="tblCita" Type="Self.tblCita" Multiplicity="1" />
+    <End Role="tblCitaDetalle" Type="Self.tblCitaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCita">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCitaDetalle">
+        <PropertyRef Name="IdCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblMedico__IdEsp__182C9B23">
+    <End Role="tblEspecialidad" Type="Self.tblEspecialidad" Multiplicity="1" />
+    <End Role="tblMedico" Type="Self.tblMedico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEspecialidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblMedico">
+        <PropertyRef Name="IdEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblMedico__IdEst__1A14E395">
+    <End Role="tblEstado" Type="Self.tblEstado" Multiplicity="1" />
+    <End Role="tblMedico" Type="Self.tblMedico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEstado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblMedico">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblMedico__IdHor__1920BF5C">
+    <End Role="tblHorario" Type="Self.tblHorario" Multiplicity="1" />
+    <End Role="tblMedico" Type="Self.tblMedico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblHorario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblMedico">
+        <PropertyRef Name="IdHorario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUsuari__IdEsp__1CF15040">
+    <End Role="tblEspecialidad" Type="Self.tblEspecialidad" Multiplicity="1" />
+    <End Role="tblUsuarios" Type="Self.tblUsuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEspecialidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUsuarios">
+        <PropertyRef Name="IdEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClinicaRamosModelStoreContainer">
+    <EntitySet Name="tblCita" EntityType="Self.tblCita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCitaDetalle" EntityType="Self.tblCitaDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEspecialidad" EntityType="Self.tblEspecialidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEstado" EntityType="Self.tblEstado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblHorario" EntityType="Self.tblHorario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMedico" EntityType="Self.tblMedico" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPaciente" EntityType="Self.tblPaciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsuarios" EntityType="Self.tblUsuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblCita__IdMedic__21B6055D" Association="Self.FK__tblCita__IdMedic__21B6055D">
+      <End Role="tblMedico" EntitySet="tblMedico" />
+      <End Role="tblCita" EntitySet="tblCita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCita__IdPacie__1FCDBCEB" Association="Self.FK__tblCita__IdPacie__1FCDBCEB">
+      <End Role="tblPaciente" EntitySet="tblPaciente" />
+      <End Role="tblCita" EntitySet="tblCita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCita__IdUsuar__20C1E124" Association="Self.FK__tblCita__IdUsuar__20C1E124">
+      <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+      <End Role="tblCita" EntitySet="tblCita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCitaDe__IdCit__24927208" Association="Self.FK__tblCitaDe__IdCit__24927208">
+      <End Role="tblCita" EntitySet="tblCita" />
+      <End Role="tblCitaDetalle" EntitySet="tblCitaDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblMedico__IdEsp__182C9B23" Association="Self.FK__tblMedico__IdEsp__182C9B23">
+      <End Role="tblEspecialidad" EntitySet="tblEspecialidad" />
+      <End Role="tblMedico" EntitySet="tblMedico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblMedico__IdEst__1A14E395" Association="Self.FK__tblMedico__IdEst__1A14E395">
+      <End Role="tblEstado" EntitySet="tblEstado" />
+      <End Role="tblMedico" EntitySet="tblMedico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblMedico__IdHor__1920BF5C" Association="Self.FK__tblMedico__IdHor__1920BF5C">
+      <End Role="tblHorario" EntitySet="tblHorario" />
+      <End Role="tblMedico" EntitySet="tblMedico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUsuari__IdEsp__1CF15040" Association="Self.FK__tblUsuari__IdEsp__1CF15040">
+      <End Role="tblEspecialidad" EntitySet="tblEspecialidad" />
+      <End Role="tblUsuarios" EntitySet="tblUsuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

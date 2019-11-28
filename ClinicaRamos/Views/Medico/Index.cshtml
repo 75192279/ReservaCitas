@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Medicos registrados</h2>
+
+<select id="cmbEspecialidad"></select>
+<select id="cmbEstado"></select>
+
+<input type="button" value="Ver Medico" id="btnVer" />
+
+<table id="MedicosEncontrados" class="table"></table>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registrar Medicos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <table>
+
+                    <tr>
+                        <td>Id</td>
+                        <td><input type="text" id="txtId" /></td>
+                    </tr>
+                    <tr>
+                        <td>DNI</td>
+                        <td><input type="text" id="txtDNI" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nombre</td>
+                        <td><input type="text" id="txtNombre" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ap. Paterno</td>
+                        <td><input type="text" id="txtApPaterno" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ap. Materno</td>
+                        <td><input type="text" id="txtApMaterno" /></td>
+                    </tr>
+
+                    <tr>
+                        <td>Telefono</td>
+                        <td><input type="text" id="txtTelefono" /></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Estado</td>
+                        <td><select id="cmbEstadoParaEditar"></select></td>
+                    </tr>
+
+                    <tr>
+                        <td>Especialidad</td>
+                        <td><select id="cmbEspecialidadParaEditar"></select></td>
+                    </tr>
+
+
+
+                </table>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardarDeModal">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bibliotecaMedico.js"></script>
