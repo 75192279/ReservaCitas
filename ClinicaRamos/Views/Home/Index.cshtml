@@ -2,30 +2,111 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<head>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <title>Protafolio Eduardo</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans:400,700,800&display=swap"
+          rel="stylesheet" />
+    <link href="~/Content/citas.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header>
+        <div class="header__bienvenida">
+            <h1 class="header__bienvenida__titulo">
+                CLíNICA RAMOS
+            </h1>
+            <hr class="header__bienvenida__barrita barrita barrita-naranja" />
+            <p class="header__bienvenida__descripcion">
+                Creemos que todos deberian tener facil acceso a una excelente atencion dental
+            </p>
+
+        </div>
+    </header>
+
+    <section class="servicios p-bloque">
+        <h2 class="servicios__titulo titulo-2">
+            nuestros servicios
+        </h2>
+
+        <div class="servicios__box container">
+            <div class="servicios__box__item">
+                <h3 class="titulo-3">Estectica Dental</h3>
+                <p class="servicios__box_item-p">
+                    ¡Con el objetivo de mejorar los dientes de la persona y, con ello, su apariencia física!
+                </p>
+            </div>
+
+            <div class="servicios__box__item">
+                <h3 class="titulo-3">Blancamiento Dental</h3>
+                <p class="servicios__box_item-p">
+                    ¡Con el objetivo de reducir varios tonos el color original de las piezas dentales, dejando los dientes más blancos y brillantes!
+                </p>
+            </div>
+            <div class="servicios__box__item">
+                <h3 class="titulo-3">Ortodoncia</h3>
+                <p class="servicios__box_item-p">
+                    ¡Tratamiento de las anomalías de forma, posición, relación y función de las estructuras dentomaxilofaciales!
+                </p>
+            </div>
+            <div class="servicios__box__item">
+                <h3 class="titulo-3">Rehabilitación Oral</h3>
+                <p class="servicios__box_item-p">
+                    ¡Restauración de dientes, devuelve la función estética y armonía oral mediante prótesis dentales
+                    de perdidas de dientes, grandes destrucciones o de solucionar problemas estéticos,
+                    siempre buscando una oclusión y función correcta!
+                </p>
+            </div>
+            <div class="servicios__box__item">
+                <h3 class="titulo-3">Implatología</h3>
+                <p class="servicios__box_item-p">
+                    ¡Uso de materiales aloplásticos dentro o sobre los huesos de maxilares para dar apoyo a una rehabilitación denta!
+                </p>
+            </div>
+            <div class="servicios__box__item">
+                <h3 class="titulo-3">Endodoncia</h3>
+                <p class="servicios__box_item-p">
+                    ¡Consiste en la extirpación de la pulpa dental y el posterior relleno y sellado de la cavidad pulpar con un material inerte!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about p-bloque">
+        <h2 class="about__titulo  ">
+            Especialistas
+        </h2>
+        <hr class="about__barrita barrita barrita-blanco" />
+        <div class="especialistas__box container">
+            <div class="especialistas__box__item">
+                <h3 class="titulo-3">Damian Huaman Avila</h3>
+                <p class="servicios__box_item-p">
+                    Especialista en Estetica dental
+                </p>
+            </div>
+            <div class="especialistas__box__item">
+                <h3 class="titulo-3">Deysi Taipe Medrano</h3>
+                <p class="especialista__box_item-p">
+                    Especialista en Ortodoncia
+                </p>
+            </div>
+            <div class="especialistas__box__item">
+                <h3 class="titulo-3">Haydee Raymundo</h3>
+                <p class="servicios__box_item-p">
+                    Especialista en Endodoncia
+                </p>
+            </div>
+            <div class="especialistas__box__item">
+                <h3 class="titulo-3">Victor Huaman</h3>
+                <p class="servicios__box_item-p">
+                    Especialista en Rehabilitación Dental
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        Copyright © 2019 - Clinica Dental
+    </footer>
+</body>
+

@@ -1,0 +1,147 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.p-bloque {
+    padding: 13rem 0;
+}
+
+.barrita {
+    width: 4rem;
+    margin: 3rem 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.barrita-naranja {
+    border: 1.5px solid #f4623a;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+}
+
+.titulo-2 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.titulo-2-blanco {
+    color: white;
+}
+
+.titulo-3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #212529;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(92,77,66,.8), rgba(92,77,66,.1)), url(../img/1.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: all 2s;
+}
+
+.header__bienvenida {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__bienvenida__titulo {
+    font-size: 5.6rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header__bienvenida__descripcion {
+    color: rgba(255,255,255,.90);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-family: 'Merriweather', serif;
+}
+
+.servicios__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.servicios__box__item {
+    text-align: center;
+    width: 31%;
+}
+
+.icon {
+    font-size: 6.4rem;
+    color: #f4623a;
+    margin-bottom: 2.5rem;
+    display: inline-block;
+}
+
+.servicios__box_item-p {
+    font-size: 1.6rem;
+    font-family: 'Merriweather', serif;
+    color: #6c757d;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+
+.about {
+    margin-top: -10%;
+    text-align: center;
+    background-color: #f8f9fa;
+    /*padding:1rem;*/
+    width: 100%;
+}
+
+.about__titulo {
+    font-size: 3rem;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.especialistas__box {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.especialistas__box__item {
+    text-align: center;
+    width: 22%;
+}
+
+.especialista__box_item-p {
+    font-size: 1.6rem;
+    font-family: 'Merriweather', serif;
+    color: #6c757d;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 4.8rem 0;
+    color: #6c757d;
+}
