@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace ClinicaRamos.Controllers
+{
+    public class UsuarioController : Controller
+    {
+        // GET: Usuario
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public JsonResult listarUsuario()
+        {
+            List<ClinicaRamos.Models.Paciente> Listado = new List<Models.Paciente>();
+
+
+            ClinicaRamosEntities2 Datos = new ClinicaRamosEntities2();
+            foreach (tblUsuarios elemento in Datos.tblUsuarios)
+            {
+                ClinicaRamos.Models.Usuario objeto01 = new Models.Usuario();
+                objeto01.Id = elemento.Id;
+                objeto01.Correo = elemento.Correo;
+                objeto01.Password = Convert.ToString(elemento.Password);
+                objeto01.Nombres = elemento.Nombres;
+                objeto01.Apellidos = elemento.Apelllidos;
+                objeto01.DNI = elemento.DNI;
+                objeto01.FechaNacimiento = Convert.ToDateTime(elemento.FechaNacimiento);
+                objeto01.Genero = elemento.Genero;
+
+                //Listado.Add(objeto01);
+            }
+
+            return Json(Listado, JsonRequestBehavior.AllowGet);
+        }
+    }
+}
