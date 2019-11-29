@@ -18,7 +18,7 @@ namespace ClinicaRamos.Controllers
         {
             List<ClinicaRamos.Models.Especialidad> Listado = new List<Models.Especialidad>();
 
-            ClinicaRamosEntities1 Datos = new ClinicaRamosEntities1();
+            ClinicaRamosEntities2 Datos = new ClinicaRamosEntities2();
             foreach (tblEspecialidad elemento in Datos.tblEspecialidad)
             {
                 ClinicaRamos.Models.Especialidad objeto01 = new Models.Especialidad();

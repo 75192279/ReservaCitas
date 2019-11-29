@@ -128,20 +128,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contenedor.Context.cs">
+    <Compile Include="contenedor.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Contenedor.Context.tt</DependentUpon>
+      <DependentUpon>contenedor.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Contenedor.cs">
+    <Compile Include="contenedor.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
-    <Compile Include="Contenedor.Designer.cs">
+    <Compile Include="contenedor.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Contenedor.edmx</DependentUpon>
+      <DependentUpon>contenedor.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CitaController.cs" />
     <Compile Include="Controllers\CitaDetalleController.cs" />
@@ -165,40 +165,40 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tblCita.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblCitaDetalle.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblEspecialidad.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblEstado.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblHorario.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblMedico.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblPaciente.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
     <Compile Include="tblUsuarios.cs">
-      <DependentUpon>Contenedor.tt</DependentUpon>
+      <DependentUpon>contenedor.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Contenedor.Context.tt">
+    <Content Include="contenedor.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Contenedor.edmx</DependentUpon>
-      <LastGenOutput>Contenedor.Context.cs</LastGenOutput>
+      <DependentUpon>contenedor.edmx</DependentUpon>
+      <LastGenOutput>contenedor.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Contenedor.tt">
+    <Content Include="contenedor.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Contenedor.edmx</DependentUpon>
-      <LastGenOutput>Contenedor.cs</LastGenOutput>
+      <DependentUpon>contenedor.edmx</DependentUpon>
+      <LastGenOutput>contenedor.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -218,12 +218,12 @@
     <Content Include="Scripts\bibliotecaPaciente.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Contenedor.edmx">
+    <EntityDeploy Include="contenedor.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Contenedor.Designer.cs</LastGenOutput>
+      <LastGenOutput>contenedor.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Contenedor.edmx.diagram">
-      <DependentUpon>Contenedor.edmx</DependentUpon>
+    <Content Include="contenedor.edmx.diagram">
+      <DependentUpon>contenedor.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

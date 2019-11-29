@@ -16,7 +16,7 @@ namespace ClinicaRamos
     {
         public int Id { get; set; }
         public System.DateTime Fecha { get; set; }
-        public string observacion { get; set; }
+        public string tratamiento { get; set; }
         public int IdCita { get; set; }
     
         public virtual tblCita tblCita { get; set; }

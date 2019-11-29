@@ -5,17 +5,15 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombrePaciente" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidoPaciente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tratamiento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="IdPaciente" Type="Int32" Nullable="false" />
-    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
     <Property Name="IdMedico" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tblMedico" Relationship="Self.FK__tblCita__IdMedic__21B6055D" FromRole="tblCita" ToRole="tblMedico" />
-    <NavigationProperty Name="tblPaciente" Relationship="Self.FK__tblCita__IdPacie__1FCDBCEB" FromRole="tblCita" ToRole="tblPaciente" />
-    <NavigationProperty Name="tblUsuarios" Relationship="Self.FK__tblCita__IdUsuar__20C1E124" FromRole="tblCita" ToRole="tblUsuarios" />
-    <NavigationProperty Name="tblCitaDetalle" Relationship="Self.FK__tblCitaDe__IdCit__24927208" FromRole="tblCita" ToRole="tblCitaDetalle" />
+    <NavigationProperty Name="tblMedico" Relationship="Self.FK__tblCita__IdMedic__1FCDBCEB" FromRole="tblCita" ToRole="tblMedico" />
+    <NavigationProperty Name="tblCitaDetalle" Relationship="Self.FK__tblCitaDe__IdCit__22AA2996" FromRole="tblCita" ToRole="tblCitaDetalle" />
   </EntityType>
   <EntityType Name="tblCitaDetalle">
     <Key>
@@ -23,9 +21,9 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tratamiento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IdCita" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tblCita" Relationship="Self.FK__tblCitaDe__IdCit__24927208" FromRole="tblCitaDetalle" ToRole="tblCita" />
+    <NavigationProperty Name="tblCita" Relationship="Self.FK__tblCitaDe__IdCit__22AA2996" FromRole="tblCitaDetalle" ToRole="tblCita" />
   </EntityType>
   <EntityType Name="tblEspecialidad">
     <Key>
@@ -67,7 +65,7 @@
     <Property Name="IdEspecialidad" Type="Int32" Nullable="false" />
     <Property Name="IdHorario" Type="Int32" Nullable="false" />
     <Property Name="IdEstado" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tblCita" Relationship="Self.FK__tblCita__IdMedic__21B6055D" FromRole="tblMedico" ToRole="tblCita" />
+    <NavigationProperty Name="tblCita" Relationship="Self.FK__tblCita__IdMedic__1FCDBCEB" FromRole="tblMedico" ToRole="tblCita" />
     <NavigationProperty Name="tblEspecialidad" Relationship="Self.FK__tblMedico__IdEsp__182C9B23" FromRole="tblMedico" ToRole="tblEspecialidad" />
     <NavigationProperty Name="tblEstado" Relationship="Self.FK__tblMedico__IdEst__1A14E395" FromRole="tblMedico" ToRole="tblEstado" />
     <NavigationProperty Name="tblHorario" Relationship="Self.FK__tblMedico__IdHor__1920BF5C" FromRole="tblMedico" ToRole="tblHorario" />
@@ -85,7 +83,6 @@
     <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
     <Property Name="Genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="tblCita" Relationship="Self.FK__tblCita__IdPacie__1FCDBCEB" FromRole="tblPaciente" ToRole="tblCita" />
   </EntityType>
   <EntityType Name="tblUsuarios">
     <Key>
@@ -100,10 +97,9 @@
     <Property Name="FechaNacimiento" Type="DateTime" Precision="0" />
     <Property Name="Genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="IdEspecialidad" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tblCita" Relationship="Self.FK__tblCita__IdUsuar__20C1E124" FromRole="tblUsuarios" ToRole="tblCita" />
     <NavigationProperty Name="tblEspecialidad" Relationship="Self.FK__tblUsuari__IdEsp__1CF15040" FromRole="tblUsuarios" ToRole="tblEspecialidad" />
   </EntityType>
-  <Association Name="FK__tblCita__IdMedic__21B6055D">
+  <Association Name="FK__tblCita__IdMedic__1FCDBCEB">
     <End Role="tblMedico" Type="Self.tblMedico" Multiplicity="1" />
     <End Role="tblCita" Type="Self.tblCita" Multiplicity="*" />
     <ReferentialConstraint>
@@ -115,31 +111,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tblCita__IdPacie__1FCDBCEB">
-    <End Role="tblPaciente" Type="Self.tblPaciente" Multiplicity="1" />
-    <End Role="tblCita" Type="Self.tblCita" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblPaciente">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="tblCita">
-        <PropertyRef Name="IdPaciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tblCita__IdUsuar__20C1E124">
-    <End Role="tblUsuarios" Type="Self.tblUsuarios" Multiplicity="1" />
-    <End Role="tblCita" Type="Self.tblCita" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblUsuarios">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="tblCita">
-        <PropertyRef Name="IdUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tblCitaDe__IdCit__24927208">
+  <Association Name="FK__tblCitaDe__IdCit__22AA2996">
     <End Role="tblCita" Type="Self.tblCita" Multiplicity="1" />
     <End Role="tblCitaDetalle" Type="Self.tblCitaDetalle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -199,7 +171,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ClinicaRamosEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ClinicaRamosEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tblCita" EntityType="Self.tblCita" />
     <EntitySet Name="tblCitaDetalle" EntityType="Self.tblCitaDetalle" />
     <EntitySet Name="tblEspecialidad" EntityType="Self.tblEspecialidad" />
@@ -208,19 +180,11 @@
     <EntitySet Name="tblMedico" EntityType="Self.tblMedico" />
     <EntitySet Name="tblPaciente" EntityType="Self.tblPaciente" />
     <EntitySet Name="tblUsuarios" EntityType="Self.tblUsuarios" />
-    <AssociationSet Name="FK__tblCita__IdMedic__21B6055D" Association="Self.FK__tblCita__IdMedic__21B6055D">
+    <AssociationSet Name="FK__tblCita__IdMedic__1FCDBCEB" Association="Self.FK__tblCita__IdMedic__1FCDBCEB">
       <End Role="tblMedico" EntitySet="tblMedico" />
       <End Role="tblCita" EntitySet="tblCita" />
     </AssociationSet>
-    <AssociationSet Name="FK__tblCita__IdPacie__1FCDBCEB" Association="Self.FK__tblCita__IdPacie__1FCDBCEB">
-      <End Role="tblPaciente" EntitySet="tblPaciente" />
-      <End Role="tblCita" EntitySet="tblCita" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tblCita__IdUsuar__20C1E124" Association="Self.FK__tblCita__IdUsuar__20C1E124">
-      <End Role="tblUsuarios" EntitySet="tblUsuarios" />
-      <End Role="tblCita" EntitySet="tblCita" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tblCitaDe__IdCit__24927208" Association="Self.FK__tblCitaDe__IdCit__24927208">
+    <AssociationSet Name="FK__tblCitaDe__IdCit__22AA2996" Association="Self.FK__tblCitaDe__IdCit__22AA2996">
       <End Role="tblCita" EntitySet="tblCita" />
       <End Role="tblCitaDetalle" EntitySet="tblCitaDetalle" />
     </AssociationSet>

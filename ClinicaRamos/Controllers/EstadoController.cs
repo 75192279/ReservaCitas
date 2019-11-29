@@ -17,7 +17,7 @@ namespace ClinicaRamos.Controllers
         public JsonResult listarEstado()
         {
             List<ClinicaRamos.Models.Estado> Listado = new List<Models.Estado>();
-            ClinicaRamosEntities1 Datos = new ClinicaRamosEntities1();
+            ClinicaRamosEntities2 Datos = new ClinicaRamosEntities2();
             foreach(tblEstado elemento in Datos.tblEstado)
             {
                 ClinicaRamos.Models.Estado objeto01 = new Models.Estado();

@@ -14,12 +14,6 @@ namespace ClinicaRamos
     
     public partial class tblPaciente
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblPaciente()
-        {
-            this.tblCita = new HashSet<tblCita>();
-        }
-    
         public int Id { get; set; }
         public string DNI { get; set; }
         public string Nombres { get; set; }
@@ -29,8 +23,5 @@ namespace ClinicaRamos
         public string Direccion { get; set; }
         public Nullable<System.DateTime> FechaNacimiento { get; set; }
         public string Genero { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblCita> tblCita { get; set; }
     }
 }

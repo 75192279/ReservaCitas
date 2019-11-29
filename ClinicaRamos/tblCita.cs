@@ -21,17 +21,15 @@ namespace ClinicaRamos
         }
     
         public int Id { get; set; }
+        public string nombrePaciente { get; set; }
+        public string apellidoPaciente { get; set; }
         public System.DateTime Fecha { get; set; }
         public System.TimeSpan Hora { get; set; }
-        public string observacion { get; set; }
+        public string tratamiento { get; set; }
         public string Estado { get; set; }
-        public int IdPaciente { get; set; }
-        public int IdUsuario { get; set; }
         public int IdMedico { get; set; }
     
         public virtual tblMedico tblMedico { get; set; }
-        public virtual tblPaciente tblPaciente { get; set; }
-        public virtual tblUsuarios tblUsuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblCitaDetalle> tblCitaDetalle { get; set; }
     }

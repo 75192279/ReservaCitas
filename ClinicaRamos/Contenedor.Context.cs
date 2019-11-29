@@ -13,10 +13,10 @@ namespace ClinicaRamos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ClinicaRamosEntities1 : DbContext
+    public partial class ClinicaRamosEntities2 : DbContext
     {
-        public ClinicaRamosEntities1()
-            : base("name=ClinicaRamosEntities1")
+        public ClinicaRamosEntities2()
+            : base("name=ClinicaRamosEntities2")
         {
         }
     

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ClinicaRamosModelStoreContainer" CdmEntityContainer="ClinicaRamosEntities1">
+  <EntityContainerMapping StorageEntityContainer="ClinicaRamosModelStoreContainer" CdmEntityContainer="ClinicaRamosEntities2">
     <EntitySetMapping Name="tblCita">
       <EntityTypeMapping TypeName="ClinicaRamosModel.tblCita">
         <MappingFragment StoreEntitySet="tblCita">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombrePaciente" ColumnName="nombrePaciente" />
+          <ScalarProperty Name="apellidoPaciente" ColumnName="apellidoPaciente" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="Hora" ColumnName="Hora" />
-          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="tratamiento" ColumnName="tratamiento" />
           <ScalarProperty Name="Estado" ColumnName="Estado" />
-          <ScalarProperty Name="IdPaciente" ColumnName="IdPaciente" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
           <ScalarProperty Name="IdMedico" ColumnName="IdMedico" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -20,7 +20,7 @@
         <MappingFragment StoreEntitySet="tblCitaDetalle">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="tratamiento" ColumnName="tratamiento" />
           <ScalarProperty Name="IdCita" ColumnName="IdCita" />
         </MappingFragment>
       </EntityTypeMapping>

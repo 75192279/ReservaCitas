@@ -18,7 +18,7 @@ namespace ClinicaRamos.Controllers
         {
             List<ClinicaRamos.Models.Medico> Listado = new List<Models.Medico>();
 
-            ClinicaRamosEntities1 Datos = new ClinicaRamosEntities1();
+            ClinicaRamosEntities2 Datos = new ClinicaRamosEntities2();
             foreach (tblMedico elemento in Datos.tblMedico.Where(x => x.IdEspecialidad == argIdEspecialidad ))
             {
                 ClinicaRamos.Models.Especialidad aux02 = new ClinicaRamos.Models.Especialidad();
@@ -46,7 +46,7 @@ namespace ClinicaRamos.Controllers
         {
             List<ClinicaRamos.Models.Medico> Listado = new List<Models.Medico>();
 
-            ClinicaRamosEntities1 Datos = new ClinicaRamosEntities1();
+            ClinicaRamosEntities2 Datos = new ClinicaRamosEntities2();
             foreach (tblMedico elemento in Datos.tblMedico.Where(x => x.Id == argId))
             {
                 ClinicaRamos.Models.Estado aux01 = new ClinicaRamos.Models.Estado();
@@ -74,7 +74,7 @@ namespace ClinicaRamos.Controllers
 
      public bool Editar(ClinicaRamos.Models.Medico argNuevosDatosDeMedico)
         {
-            ClinicaRamosEntities1 Datos = new ClinicaRamosEntities1();
+            ClinicaRamosEntities2 Datos = new ClinicaRamosEntities2();
             tblMedico medicoExistente = Datos.tblMedico.Where(x => x.Id == argNuevosDatosDeMedico.Id).First();
             medicoExistente.DNI = argNuevosDatosDeMedico.DNI;
             medicoExistente.Nombre = argNuevosDatosDeMedico.Nombre;
