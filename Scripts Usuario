@@ -1,0 +1,16 @@
+contenido += "<tbody>";
+for (var i = 0; i < data.length; i++) {
+    contenido += "<tr>";
+    contenido += "<td>" + data[i].Id + "</td>";
+    contenido += "<td>" + data[i].Correo + "</td>";
+    contenido += "<td>" + data[i].Password + "</td>";
+    contenido += "<td>" + data[i].Nombres + "</td>";
+    contenido += "<td>" + data[i].Apellidos + "</td>";
+    contenido += "<td>" + data[i].DNI + "</td>";
+    contenido += "<td>" + data[i].FechaNacimiento + "</td>";
+    contenido += "<td>" + data[i].Genero + "</td>";
+    contenido += "</tr>"; 
+}
+contenido += "</tbody>";
+contenido += "</table>";
+document.getElementById("miTabla").innerHTML = contenido;
